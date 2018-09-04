@@ -27,7 +27,7 @@ prompt APPLICATION 125 - KasiDasi STARTER
 -- Application Export:
 --   Application:     125
 --   Name:            KasiDasi STARTER
---   Date and Time:   23:25 水曜日 8月 22, 2018
+--   Date and Time:   05:57 火曜日 9月 4, 2018
 --   Exported By:     MURAKAMI@HEARTIS-SC.CO.JP
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -37,10 +37,10 @@ prompt APPLICATION 125 - KasiDasi STARTER
 
 -- Application Statistics:
 --   Pages:                     29
---     Items:                   85
+--     Items:                   86
 --     Validations:              6
 --     Processes:               35
---     Regions:                 53
+--     Regions:                 54
 --     Buttons:                 49
 --     Dynamic Actions:         30
 --   Shared Components:
@@ -116,7 +116,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_02=>'T_FIELD_NAME2'
 ,p_substitution_value_02=>unistr('\54C1\540D')
 ,p_last_updated_by=>'MURAKAMI@HEARTIS-SC.CO.JP'
-,p_last_upd_yyyymmddhh24miss=>'20180821085116'
+,p_last_upd_yyyymmddhh24miss=>'20180904055711'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>2
 ,p_ui_type_name => null
@@ -14177,7 +14177,68 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'MURAKAMI@HEARTIS-SC.CO.JP'
-,p_last_upd_yyyymmddhh24miss=>'20180721074640'
+,p_last_upd_yyyymmddhh24miss=>'20180903042115'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(14295326022216911)
+,p_plug_name=>unistr('\6A5F\5668\4E88\7D04\30AB\30EC\30F3\30C0\30FC')
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_api.id(22342225065410641769)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_display_point=>'BODY'
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ID,',
+'       T_DATE_LEND,',
+'       T_DATE_RETURN,',
+'       T_FIELD1,',
+'       T_FIELD2,',
+'       T_FIELD3,',
+'       T_FIELD4,',
+'       T_FIELD5,',
+'       T_FIELD6,',
+'       T_PIC,',
+'       T_PIC_NAME,',
+'       T_LOCATION_ID,',
+'       T_LOCATION_NAME,',
+'       T_MODE,',
+'       T_FIELD2 || '' '' || T_FIELD3 AS T_DISP',
+'  from T_RENTAL_SCHEDULE_KD'))
+,p_plug_source_type=>'NATIVE_CSS_CALENDAR'
+,p_ajax_items_to_submit=>'P1_T_FIELD1'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'T_DATE_LEND'
+,p_attribute_02=>'T_DATE_RETURN'
+,p_attribute_03=>'T_DISP'
+,p_attribute_04=>'ID'
+,p_attribute_07=>'N'
+,p_attribute_09=>'list:navigation'
+,p_attribute_13=>'N'
+,p_attribute_16=>'&T_PIC_NAME'
+,p_attribute_17=>'Y'
+,p_attribute_19=>'Y'
+,p_attribute_21=>'10'
+,p_attribute_22=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(14295452483216912)
+,p_name=>'P1_T_FIELD1'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(14295326022216911)
+,p_use_cache_before_default=>'NO'
+,p_prompt=>unistr('\65B0\898F')
+,p_source=>'T_FIELD1'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_field_template=>wwv_flow_api.id(22342247373007641791)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'BOTH'
 );
 end;
 /
@@ -18173,8 +18234,8 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_javascript_code=>'var htmldb_delete_message=''"DELETE_CONFIRM_MSG"'';'
 ,p_page_template_options=>'#DEFAULT#'
-,p_last_updated_by=>'YOSHIZAKI@ALLEXCEED.CO.JP'
-,p_last_upd_yyyymmddhh24miss=>'20180719062214'
+,p_last_updated_by=>'MURAKAMI@HEARTIS-SC.CO.JP'
+,p_last_upd_yyyymmddhh24miss=>'20180904055711'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(38750073189126050)
@@ -18317,7 +18378,7 @@ wwv_flow_api.create_page_item(
 ,p_cSize=>30
 ,p_field_template=>wwv_flow_api.id(22342247567986641792)
 ,p_item_template_options=>'#DEFAULT#'
-,p_attribute_01=>'Y'
+,p_attribute_01=>'N'
 ,p_attribute_02=>'Y'
 );
 wwv_flow_api.create_page_da_event(
